@@ -17,6 +17,8 @@ export interface WeatherData {
         temp_c: number;
         humidity: number;
         wind_kph: number;
+        condition: WeatherCondition; // Ensure condition is here
+
     };
     forecast: {
         forecastday: DayForecast[]; // Array of 5-day forecast data

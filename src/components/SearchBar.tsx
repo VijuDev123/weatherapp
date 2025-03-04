@@ -23,7 +23,7 @@ const SearchBar: React.FC = () => {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="Enter city..."
-                className="border p-2 rounded"
+                className="border p-8 rounded"
             />
             <button onClick={handleSearch} className="bg-blue-500 text-white px-4 py-2 rounded">
                 Add City
