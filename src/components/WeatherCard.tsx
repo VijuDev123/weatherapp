@@ -4,11 +4,21 @@ import { removeCity } from "../store/weatherSlice";
 
 interface WeatherCardProps {
     city: string;
-    data: WeatherData;
+    data: WeatherData | null; // Allow data to be null initially
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ city, data }) => {
     const dispatch = useAppDispatch();
+
+    // Add check to ensure data and data.current are defined
+    if (!data || !data.current) {
+        return (
+            <div className="border p-4 rounded bg-white shadow-md">
+                <h2 className="text-xl font-bold">{city}</h2>
+                <p>Loading...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="border p-4 rounded bg-white shadow-md">
